@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from 'react';
+import React from 'react';
 
 type InputItem = {
     value: number | string
@@ -24,7 +24,7 @@ const PinInput = ({numberOfPins, defaultValue}: Props) => {
             id: i
         }))
         setItems(_items)
-    }, []);
+    }, [defaultValue, numberOfPins]);
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value as unknown as number;
